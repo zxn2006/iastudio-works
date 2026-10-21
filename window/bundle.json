@@ -1,6 +1,6 @@
 {
  "schema": "ia-window-bundle/1",
- "builtAt": "2026-10-21T05:14:06.722Z",
+ "builtAt": "2026-10-21T05:37:01.260Z",
  "shelf": [
   "media/pool-shuju.mp4",
   "media/pool-zhishi.mp4",
@@ -8,7 +8,7 @@
   "media/pool-xuanchuan.mp4"
  ],
  "featured": [
-  "media/opus-glass-prod2.mp4"
+  "media/gear-demo.mp4"
  ],
  "assets": {
   "fonts/noto-sans-sc.woff2": {
@@ -83,17 +83,17 @@
    "sha256": "b28c10bd9e4ca39f7f1eace81cb6d688891fa0d308577544d1c45015d4744a9d",
    "bytes": 48297
   },
-  "media/opus-glass-prod2.mp4": {
-   "sha256": "29664d02e893d73992adb9426123f94153e7415c21780ce5d650f13591cc9a16",
-   "bytes": 4027055
+  "media/gear-demo.mp4": {
+   "sha256": "afc13fa0aecbd1fb4cbb77deed4f73ba8b72ed37016c2cc10773d9359b263760",
+   "bytes": 3890995
   },
-  "media/opus-glass-prod2.jpg": {
-   "sha256": "afb7bee0a7da74dcee934b013a84b036ac390f1cb2ffe48e3281b3c1452a4098",
-   "bytes": 64145
+  "media/gear-demo.jpg": {
+   "sha256": "475f1d8356c36413dde4db4b064e8cd0554746a52c4c3b9b6c2ad1bd667b1775",
+   "bytes": 49621
   },
   "index.html": {
-   "sha256": "8334b468d6d54b0fb36078c0564e222c6a33182a60780158277fac594c749af4",
-   "bytes": 13202
+   "sha256": "c28ba144b9417763580b275ded6e053f03d5278af29e5ca257254e4764ed20ae",
+   "bytes": 13213
   }
  }
 }
