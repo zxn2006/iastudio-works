@@ -23,7 +23,7 @@ input[type=range]{width:100%;accent-color:var(--accent)}
 .hint{position:fixed;right:var(--space-5);bottom:var(--space-5);font-size:11px;color:var(--muted)}
 @media(max-width:720px){aside{left:8px;right:8px;top:8px;width:auto;padding:var(--space-3)}h1{font-size:18px}}
 </style>
-<script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+<script type="importmap">{"imports":{"three":"../../vendor/three.module.js"}}</script>
 </head><body>
 <canvas id="cv"></canvas>
 <aside>
@@ -46,8 +46,8 @@ input[type=range]{width:100%;accent-color:var(--accent)}
 <p class="hint">拖拽旋转 · 滚轮缩放 · 右键平移</p>
 <script type="module">
 import * as THREE from 'three';
-import { STLLoader } from './vendor/STLLoader.js';
-import { OrbitControls } from './vendor/OrbitControls.js';
+import { STLLoader } from '../../vendor/STLLoader.js';
+import { OrbitControls } from '../../vendor/OrbitControls.js';
 const T = {"bg":"#0b0e15","surface":"#1a1f2c","line":"#252b3b","ink":"#e8ebf2","muted":"#9aa3b5","accent":"#e8c47c","accent2":"#7c93ff"};
 const cv = document.getElementById('cv');
 const renderer = new THREE.WebGLRenderer({ canvas: cv, antialias: true });

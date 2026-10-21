@@ -1,0 +1,28 @@
+{
+ "schema": "iastudio-cad-viewer/1",
+ "part": "bracket",
+ "title": "L 型支架",
+ "params": {
+  "length": 60,
+  "width": 40,
+  "height": 45,
+  "thick": 6
+ },
+ "volume_mm3": 40956.41,
+ "bbox_diag_mm": 101.42,
+ "builtAt": "2026-10-21T09:35:22.220Z",
+ "assets": {
+  "index.html": {
+   "sha256": "ea31aa3d1ac99c694a35085dfab7fec867af8c74791da573db45f63d46dc3ff2",
+   "bytes": 7199
+  },
+  "model.stl": {
+   "sha256": "2b3b8c3d444b71f8a03f4d7587a18ffb5929e329a7f47e47636acf5531823edd",
+   "bytes": 28284
+  },
+  "model.step": {
+   "sha256": "2a6de326ce9275f4906640936ccda3c75e95640c58def528a7fdc15acf546a13",
+   "bytes": 69044
+  }
+ }
+}

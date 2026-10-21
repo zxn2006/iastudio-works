@@ -1,0 +1,60 @@
+{
+ "schema": "iastudio-cad-viewer/2",
+ "assembly": "bearing",
+ "title": "深沟球轴承 6205",
+ "params": {
+  "od": 52,
+  "id": 25,
+  "width": 15,
+  "balls": 8
+ },
+ "parts": [
+  "外圈",
+  "内圈",
+  "滚珠",
+  "保持架"
+ ],
+ "builtAt": "2026-10-21T09:35:22.662Z",
+ "assets": {
+  "index.html": {
+   "sha256": "b92bfe26092047a948939442f1220cce8e340b467ca87a8b983154279532f0cd",
+   "bytes": 14948
+  },
+  "assembly.json": {
+   "sha256": "9a81934e5f8a6d85b07dccfa2799d21d13058b3b7c27b38569d8a2580d3918c1",
+   "bytes": 3767
+  },
+  "outer_ring.stl": {
+   "sha256": "3a6cd98a56feeac061e5ab782ad63224f8ad6750a96a4e9c51cb31ea9d062fbe",
+   "bytes": 50484
+  },
+  "inner_ring.stl": {
+   "sha256": "c9e240ee40dc8bdd2ed829b7a638f387e9121e85c02b5a36067957cb22dd40f1",
+   "bytes": 50484
+  },
+  "ball.stl": {
+   "sha256": "5fbb65717118f773bda1b4e00c385ea240d33ac81fa7d2e206e673a9c97ec347",
+   "bytes": 400184
+  },
+  "cage.stl": {
+   "sha256": "cd20bb0bd7d3732b82c737e8f89a6d7155d3398aae29d74f7b040745820a5981",
+   "bytes": 50484
+  },
+  "outer_ring.step": {
+   "sha256": "e0eeef5d4f6223a57c8b0c274144cf6b9a82ba45006a272938fbb92dc6a9b5ee",
+   "bytes": 9556
+  },
+  "inner_ring.step": {
+   "sha256": "6fca54a405dd235d279b80434151255728fff0b410a2c34f716f560a50046f23",
+   "bytes": 9590
+  },
+  "ball.step": {
+   "sha256": "a6f651a153754d1972d6affc18333172be66c05a66c2d00aa77124249fd84069",
+   "bytes": 2127
+  },
+  "cage.step": {
+   "sha256": "e37c238aca10fcaf67380e51fb4bfe23d0fd2522cae9b3c0c7767bfa762f70f6",
+   "bytes": 9638
+  }
+ }
+}

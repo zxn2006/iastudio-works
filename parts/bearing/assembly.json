@@ -1,0 +1,252 @@
+{
+ "schema": "iastudio-cad-assembly/1",
+ "assembly": "bearing",
+ "params": {
+  "od": 52,
+  "id": 25,
+  "width": 15,
+  "balls": 8
+ },
+ "parts": [
+  {
+   "name": "outer_ring",
+   "label": "外圈",
+   "role": "housing",
+   "file": "outer_ring.stl",
+   "explode": [
+    0,
+    0,
+    1
+   ],
+   "instances": [
+    {
+     "pos": [
+      0,
+      0,
+      0
+     ],
+     "rot": [
+      0,
+      0,
+      0
+     ]
+    }
+   ]
+  },
+  {
+   "name": "inner_ring",
+   "label": "内圈",
+   "role": "shaft",
+   "file": "inner_ring.stl",
+   "explode": [
+    0,
+    0,
+    -1
+   ],
+   "instances": [
+    {
+     "pos": [
+      0,
+      0,
+      0
+     ],
+     "rot": [
+      0,
+      0,
+      0
+     ]
+    }
+   ]
+  },
+  {
+   "name": "ball",
+   "label": "滚珠",
+   "role": "rolling",
+   "file": "ball.stl",
+   "explode": [
+    1,
+    0,
+    0.35
+   ],
+   "instances": [
+    {
+     "pos": [
+      19.25,
+      0,
+      0
+     ],
+     "rot": [
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "pos": [
+      13.612,
+      13.612,
+      0
+     ],
+     "rot": [
+      0,
+      0,
+      45
+     ]
+    },
+    {
+     "pos": [
+      0,
+      19.25,
+      0
+     ],
+     "rot": [
+      0,
+      0,
+      90
+     ]
+    },
+    {
+     "pos": [
+      -13.612,
+      13.612,
+      0
+     ],
+     "rot": [
+      0,
+      0,
+      135
+     ]
+    },
+    {
+     "pos": [
+      -19.25,
+      0,
+      0
+     ],
+     "rot": [
+      0,
+      0,
+      180
+     ]
+    },
+    {
+     "pos": [
+      -13.612,
+      -13.612,
+      0
+     ],
+     "rot": [
+      0,
+      0,
+      225
+     ]
+    },
+    {
+     "pos": [
+      0,
+      -19.25,
+      0
+     ],
+     "rot": [
+      0,
+      0,
+      270
+     ]
+    },
+    {
+     "pos": [
+      13.612,
+      -13.612,
+      0
+     ],
+     "rot": [
+      0,
+      0,
+      315
+     ]
+    }
+   ]
+  },
+  {
+   "name": "cage",
+   "label": "保持架",
+   "role": "retainer",
+   "file": "cage.stl",
+   "explode": [
+    0,
+    0,
+    -0.75
+   ],
+   "instances": [
+    {
+     "pos": [
+      0,
+      0,
+      0
+     ],
+     "rot": [
+      0,
+      0,
+      0
+     ]
+    }
+   ]
+  }
+ ],
+ "motion": {
+  "type": "orbit",
+  "rpm": 6,
+  "note": "滚珠沿节圆公转（保持架同速）；内圈可独立自转"
+ },
+ "files": {
+  "outer_ring": {
+   "stl": {
+    "sha256": "3a6cd98a56feeac061e5ab782ad63224f8ad6750a96a4e9c51cb31ea9d062fbe",
+    "bytes": 50484
+   },
+   "step": {
+    "sha256": "e0eeef5d4f6223a57c8b0c274144cf6b9a82ba45006a272938fbb92dc6a9b5ee",
+    "step_norm_sha256": "fe1ed29afa805e08900d4f996d15229bae61a46ac85f3bd44e54165ae6e4f162",
+    "bytes": 9556
+   },
+   "volume_mm3": 6927.21
+  },
+  "inner_ring": {
+   "stl": {
+    "sha256": "c9e240ee40dc8bdd2ed829b7a638f387e9121e85c02b5a36067957cb22dd40f1",
+    "bytes": 50484
+   },
+   "step": {
+    "sha256": "6fca54a405dd235d279b80434151255728fff0b410a2c34f716f560a50046f23",
+    "step_norm_sha256": "836a51605480a7e0a1f26a2274f9b613f2f7b2962aab6d390f9757b6b4266399",
+    "bytes": 9590
+   },
+   "volume_mm3": 3958.41
+  },
+  "ball": {
+   "stl": {
+    "sha256": "5fbb65717118f773bda1b4e00c385ea240d33ac81fa7d2e206e673a9c97ec347",
+    "bytes": 400184
+   },
+   "step": {
+    "sha256": "a6f651a153754d1972d6affc18333172be66c05a66c2d00aa77124249fd84069",
+    "step_norm_sha256": "aa37e24e8d6abdb85a3f365f811acdcfde1e8ccc5a9f1b14733dda5e2c10eb6e",
+    "bytes": 2127
+   },
+   "volume_mm3": 220.89
+  },
+  "cage": {
+   "stl": {
+    "sha256": "cd20bb0bd7d3732b82c737e8f89a6d7155d3398aae29d74f7b040745820a5981",
+    "bytes": 50484
+   },
+   "step": {
+    "sha256": "e37c238aca10fcaf67380e51fb4bfe23d0fd2522cae9b3c0c7767bfa762f70f6",
+    "step_norm_sha256": "a0006288d5f0d5ab4f0e320b1844e917ab6f119b062ac09f8d32170c1c1d5b2c",
+    "bytes": 9638
+   },
+   "volume_mm3": 2843.87
+  }
+ },
+ "generatedAt": "2026-10-21T08:07:56.490Z"
+}
