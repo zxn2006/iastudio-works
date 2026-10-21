@@ -1,0 +1,9 @@
+{
+ "schema": "ia-trust-contact/1",
+ "note": "只填真实可用的公开入口；url 留空=该渠道不展示。生成器不会编造账号，填完后重跑 node _work/eco/trust-page.cjs 即生效。",
+ "channels": [
+  { "name": "邮箱", "label": "商务询价 · 合同与发票", "display": "15879643676@163.com", "url": "mailto:15879643676@163.com" },
+  { "name": "闲鱼", "label": "担保交易 · 直接下单", "url": "" },
+  { "name": "小红书", "label": "作品更新 · 私信咨询", "url": "" }
+ ]
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>确定性视频交付 · 作品 / 验收 / 报价 / 联系方式</title>
+<style>
+:root{--bg:#f7f8fa;--surface:#ffffff;--line:#d8dce4;--ink:#1a1d24;--muted:#4a5260;--accent:#1d3557;--accent2:#8a6d1a;--font-display:"Source Han Serif SC", "Noto Serif SC", Georgia, serif;--font-body:"Source Han Serif SC", "Noto Serif SC", Georgia, "Microsoft YaHei", serif;--space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-5:24px;--space-6:32px;--space-7:48px;--space-8:64px;--radius:8px;--radius-sm:4px;--radius-lg:13px;;--ok:#1f7a52;--warn:#8a6a12;--err:#a8392c;--dur-fast:120ms;--dur-base:200ms;--dur-slow:320ms;--ease:cubic-bezier(.2,.7,.2,1)}
+@font-face{font-family:"Noto Sans SC";src:url("fonts/noto-sans-sc.woff2") format("woff2");font-display:block;font-weight:400}
+@font-face{font-family:"Noto Serif SC";src:url("fonts/noto-serif-sc.woff2") format("woff2");font-display:block;font-weight:400}
+@font-face{font-family:"Inter";src:url("fonts/inter.woff2") format("woff2");font-display:block;font-weight:400}
+@font-face{font-family:"Roboto";src:url("fonts/roboto.woff2") format("woff2");font-display:block;font-weight:400}
+@font-face{font-family:"Playfair Display";src:url("fonts/playfair-display.woff2") format("woff2");font-display:block;font-weight:400}
+@font-face{font-family:"Merriweather";src:url("fonts/merriweather.woff2") format("woff2");font-display:block;font-weight:400}
+@font-face{font-family:"JetBrains Mono";src:url("fonts/jetbrains-mono.woff2") format("woff2");font-display:block;font-weight:400}
+@font-face{font-family:"Fira Code";src:url("fonts/fira-code.woff2") format("woff2");font-display:block;font-weight:400}
+@font-face{font-family:"Archivo Black";src:url("fonts/archivo-black.woff2") format("woff2");font-display:block;font-weight:400}
+@font-face{font-family:"Bebas Neue";src:url("fonts/bebas-neue.woff2") format("woff2");font-display:block;font-weight:400}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1040px;margin:0 auto;padding:var(--space-8) var(--space-6) 72px}
+.kicker{font-size:13px;letter-spacing:.16em;color:var(--muted);text-transform:uppercase}
+h1{font-family:var(--font-display);font-size:40px;line-height:1.25;margin:var(--space-3) 0 var(--space-4);letter-spacing:.01em}
+.lede{font-size:17px;color:var(--muted);max-width:720px}
+.pledge{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-4);margin:var(--space-6) 0 var(--space-7);padding:var(--space-5);background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg)}
+.pledge b{display:block;font-family:var(--font-display);font-size:26px;color:var(--accent)}
+.pledge span{font-size:13px;color:var(--muted)}
+h2{font-family:var(--font-display);font-size:26px;margin:var(--space-8) 0 var(--space-2);padding-top:var(--space-3);border-top:2px solid var(--ink)}
+h2 small{font-family:var(--font-body);font-size:13px;color:var(--muted);font-weight:400;margin-left:var(--space-3)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-4);margin-top:var(--space-5)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.card video{width:100%;display:block;aspect-ratio:16/9;object-fit:cover;background:var(--line)}
+.card .bd{padding:var(--space-4)}
+.card h3{font-size:17px;margin-bottom:var(--space-1)}
+.card p{font-size:13px;color:var(--muted)}
+.card .meta{font-size:12px;color:var(--muted);margin-top:var(--space-2);font-variant-numeric:tabular-nums}
+table{width:100%;border-collapse:collapse;margin-top:var(--space-4);background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+th,td{text-align:left;padding:12px var(--space-4);font-size:14px;border-bottom:1px solid var(--line)}
+th{width:34%;color:var(--muted);font-weight:600;background:var(--bg)}
+td{font-variant-numeric:tabular-nums;word-break:break-all}
+tr:last-child th,tr:last-child td{border-bottom:none}
+.pass{color:var(--accent);font-weight:700}
+.sku{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-4);margin-top:var(--space-5)}
+.sku .card{padding:var(--space-5);display:flex;flex-direction:column}
+.sku .price{font-family:var(--font-display);font-size:38px;color:var(--accent);margin:var(--space-2) 0}
+.sku .price small{font-size:14px;color:var(--muted);font-family:var(--font-body)}
+.sku ul{list-style:none;margin:var(--space-3) 0 var(--space-4);font-size:14px}
+.sku li{padding-left:18px;position:relative;margin-bottom:var(--space-2);color:var(--muted)}
+.sku li:before{content:"·";position:absolute;left:4px;color:var(--accent);font-weight:700}
+.sku .who{font-size:12px;color:var(--muted);margin-top:auto;padding-top:var(--space-3);border-top:1px dashed var(--line)}
+.strip-title{font-size:13px;color:var(--muted);margin-top:var(--space-6);letter-spacing:.04em}
+.strip{display:grid;grid-template-columns:repeat(6,1fr);gap:var(--space-3);margin-top:var(--space-3)}
+.thumb{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-sm);overflow:hidden}
+.thumb img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover}
+.thumb figcaption{font-size:12px;color:var(--muted);padding:var(--space-2) var(--space-3)}
+.chips{display:flex;flex-wrap:wrap;gap:var(--space-4);margin-top:var(--space-5)}
+.chip{display:flex;flex-direction:column;gap:2px;padding:var(--space-4) var(--space-5);background:var(--surface);border:1px solid var(--ink);border-radius:var(--radius);text-decoration:none;color:var(--ink)}
+.chip em{font-style:normal;font-size:15px;font-variant-numeric:tabular-nums}
+.chip span{font-size:12px;color:var(--muted)}
+.todo{margin-top:var(--space-4);padding:var(--space-4);background:var(--surface);border:1px dashed var(--line);border-radius:var(--radius);font-size:14px;color:var(--muted)}
+code{font-family:var(--font-mono,monospace);font-size:12px;background:var(--bg);padding:2px 6px;border-radius:var(--radius-sm)}
+footer{margin-top:var(--space-8);padding-top:var(--space-4);border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+@media(max-width:880px){.grid3,.sku,.pledge{grid-template-columns:1fr 1fr}h1{font-size:32px}}
+@media(max-width:600px){.grid3,.sku,.pledge{grid-template-columns:1fr}h1{font-size:28px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <p class="kicker">IAStudio · 确定性视频交付</p>
+  <h1>每一帧都能复算，每一单都能验收</h1>
+  <p class="lede">同一份输入、同一个渲染内核，两次渲染逐像素一致（SHA-256 对账）。下面四个板块，分别回答客户最先问的四件事：你做过什么、怎么保证质量、多少钱、怎么找到你。</p>
+  <div class="pledge">
+    <div><b>18+</b><span>完整成片在库</span></div>
+    <div><b>7.3ms</b><span>音画误差（样例实测）</span></div>
+    <div><b>48h</b><span>定制交付窗口</span></div>
+    <div><b>0</b><span>素材版权风险（全程序渲染）</span></div>
+  </div>
+</header>
+
+<h2 id="works">一 · 作品 <small>点开即播，无登录</small></h2>
+<div class="grid3">
+  <article class="card"><video src="media/birthday_c_av.mp4" poster="media/birthday_c_av.jpg" controls preload="metadata"></video><div class="bd"><h3>生日悖论</h3><p>23 个人里为什么过半会同一天生日——概率直觉的第一课</p><div class="meta">知识科普 · 含旁白字幕 · 1280×720 · 16.0s</div></div></article>
+  <article class="card"><video src="media/blackhole.mp4" poster="media/blackhole.jpg" controls preload="metadata"></video><div class="bd"><h3>黑洞</h3><p>光线弯折与事件视界，用动画讲清不可见的天体</p><div class="meta">知识科普 · 视觉演示 · 1280×720 · 16.0s</div></div></article>
+  <article class="card"><video src="media/agent-18pct.mp4" poster="media/agent-18pct.jpg" controls preload="metadata"></video><div class="bd"><h3>数据播报</h3><p>18% 这个数字如何在一屏里说清——科技风数据面板</p><div class="meta">数据播报 · 商务交付样式 · 1920×1080 · 34.2s</div></div></article>
+</div>
+<p class="strip-title">更多成片（海报帧，完整片库 18+）</p>
+<div class="strip">
+  <figure class="thumb"><img src="media/more-rayleigh.jpg" alt="瑞利散射"><figcaption>瑞利散射</figcaption></figure>
+  <figure class="thumb"><img src="media/more-tidal.jpg" alt="潮汐"><figcaption>潮汐</figcaption></figure>
+  <figure class="thumb"><img src="media/more-comet.jpg" alt="彗星"><figcaption>彗星</figcaption></figure>
+  <figure class="thumb"><img src="media/more-seasons.jpg" alt="四季"><figcaption>四季</figcaption></figure>
+  <figure class="thumb"><img src="media/more-monty_c_av.jpg" alt="蒙提霍尔"><figcaption>蒙提霍尔</figcaption></figure>
+  <figure class="thumb"><img src="media/more-simpson_c_av.jpg" alt="辛普森悖论"><figcaption>辛普森悖论</figcaption></figure>
+</div>
+
+<h2 id="acceptance">二 · 验收单样例 <small>真实 manifest，本页生成时重算哈希</small></h2>
+<table>
+  <tr><th>成片哈希（SHA-256）</th><td>f580a8a6fd59d02ae72df8554f82d37406f959329d805a0c3da3ff1d7b594541</td></tr>
+  <tr><th>视频时长 / 旁白时长</th><td>7.267s / 7.274s</td></tr>
+  <tr><th>音画偏差</th><td>7.3 ms <span class="pass">✓ 在 ±1 帧内</span></td></tr>
+  <tr><th>逐帧可复现</th><td>两次渲染逐像素一致 <span class="pass">✓</span></td></tr>
+  <tr><th>样例成片（可下载核对）</th><td><a href="media/video-v1.mp4">media/video-v1.mp4</a></td></tr>
+</table>
+<p class="meta" style="font-size:13px;color:var(--muted);margin-top:var(--space-3)">交付时随片附同名 .manifest.json：客户可自行重算 sha256 与时长，不必信任我们的话术。</p>
+
+<h2 id="price">三 · 报价 <small>与商业文档同价，无隐藏项</small></h2>
+<div class="sku">
+  <article class="card"><h3>数据播报 · 定制卡</h3><div class="price">¥199<small> 元/条</small></div><ul><li>你给文案，48h 出 30-60s 科技风数据片</li><li>含 AI 配音 + 逐句字幕</li><li>附机器验收单（时长/sha256/音画差）</li></ul><div class="who">适合：财经日更 · 数码测评 · 课程预告</div></article>
+  <article class="card"><h3>知识卡片 · 定制卡</h3><div class="price">¥149<small> 元/条</small></div><ul><li>竖版 1080×1920 原生渲染（非横版裁切）</li><li>卡片动画 + 自动配音 + 逐字字幕</li><li>抖音 / 小红书直接可发</li></ul><div class="who">适合：知识号 · 书单号 · 冷知识号</div></article>
+  <article class="card"><h3>知识动画 · 混剪授权</h3><div class="price">¥299<small> 元/包</small></div><ul><li>17 部成片 mp4（1080P）</li><li>单主体商用授权，可混剪二创</li><li>禁转售源文件</li></ul><div class="who">适合：剪辑师 · 二创作者 · 小 MCN</div></article>
+</div>
+
+<h2 id="contact">四 · 联系方式 <small>平台担保交易，验收后放款</small></h2>
+<div class="chips"><a class="chip" href="mailto:15879643676@163.com"><b>邮箱</b><em>15879643676@163.com</em><span>商务询价 · 合同与发票</span></a></div>
+<p class="meta" style="font-size:13px;color:var(--muted);margin-top:var(--space-3)">未开通的渠道不展示——宁可少一个入口，也不给空链接。</p>
+
+<footer>本页由 <code>_work/eco/trust-page.cjs</code> 生成 · 设计令牌来自 <code>lib/design-tokens.cjs</code> · 字体同源 <code>style-distill/fonts</code> · 资产哈希见 <code>bundle.json</code></footer>
+</div>
+</body>
+</html>

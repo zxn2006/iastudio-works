@@ -1,0 +1,108 @@
+{
+ "schema": "ia-trust-bundle/1",
+ "builtAt": "2026-10-20T23:44:24.910Z",
+ "works": [
+  "media/birthday_c_av.mp4",
+  "media/blackhole.mp4",
+  "media/agent-18pct.mp4"
+ ],
+ "sample": "media/video-v1.mp4",
+ "assets": {
+  "fonts/noto-sans-sc.woff2": {
+   "sha256": "95e3633b6a98f764ba3adfb54504a0cd4799328c009adf9081d6c1850f9c4c78",
+   "bytes": 1142552
+  },
+  "fonts/noto-serif-sc.woff2": {
+   "sha256": "0d5a3fd4981d7cc03ad357775de336b27d41394158d52c7bdda1ab2c68fa1845",
+   "bytes": 1509736
+  },
+  "fonts/inter.woff2": {
+   "sha256": "8909904ab6c872eb994093482a88a28eca2cd95912d7b6fecd72103b0dc07edc",
+   "bytes": 23664
+  },
+  "fonts/roboto.woff2": {
+   "sha256": "425c0713a8176f92273d378599c7eac57de7fafabd4bd0ed457b70eb8f80d371",
+   "bytes": 21884
+  },
+  "fonts/playfair-display.woff2": {
+   "sha256": "1fe9ad5d8b2ebd8ecb8fbd05bed1e3fdfa52dae3f1a04e1c219918442fe9394d",
+   "bytes": 21856
+  },
+  "fonts/merriweather.woff2": {
+   "sha256": "66f5bd22d738a801a9e58d71920559743b0baaced04be299e3c4feca3dce3556",
+   "bytes": 49168
+  },
+  "fonts/jetbrains-mono.woff2": {
+   "sha256": "14425ba9c695763c1547f48a206b7aa60350a33ae23de09f0407877f3fcd89eb",
+   "bytes": 21168
+  },
+  "fonts/fira-code.woff2": {
+   "sha256": "6dc9da171ccea71d525379ee1cbf51d143e31acac330a251bb71b3d6060e687c",
+   "bytes": 23312
+  },
+  "fonts/archivo-black.woff2": {
+   "sha256": "25f33e61cf995abd6be62931cf03bf427286259177b43618cc410ee0157cfd30",
+   "bytes": 18604
+  },
+  "fonts/bebas-neue.woff2": {
+   "sha256": "a7c90c89240c134f7fdd33d40c000ec90b79d675ea53e8cc5a6d423c073de412",
+   "bytes": 13768
+  },
+  "media/birthday_c_av.mp4": {
+   "sha256": "ad9a147c2510c06d35ca1cb2941dce788094593646a12ffff623cb78c4767091",
+   "bytes": 2206980
+  },
+  "media/birthday_c_av.jpg": {
+   "sha256": "36bfb62f712bb1cd3171d1e370f1fa10d17a738bafa804e1851a3516ad9c0a18",
+   "bytes": 32094
+  },
+  "media/blackhole.mp4": {
+   "sha256": "27625fd05bb477348f7b2c54b77c0ee3f8e88ae4e0e776c6299a6937a5d369ff",
+   "bytes": 670129
+  },
+  "media/blackhole.jpg": {
+   "sha256": "e700997feea8b9c776b99812f7f6d35e77735cab0613ccd34805f77d5de0b171",
+   "bytes": 20909
+  },
+  "media/agent-18pct.mp4": {
+   "sha256": "34fda9fbd15f2f58d17b47227d9d3ed1ff1d5e5bad15c70688a19493766cbbcb",
+   "bytes": 2780572
+  },
+  "media/agent-18pct.jpg": {
+   "sha256": "dd1a8a35372ad3bb7c23d5522df5a4a22c2d389eaf2b33b1072410da9156700b",
+   "bytes": 124998
+  },
+  "media/more-rayleigh.jpg": {
+   "sha256": "fb16e66b1b091eca887b98b7e815ce18be944221716c52fcf13c3f19cf9766aa",
+   "bytes": 24631
+  },
+  "media/more-tidal.jpg": {
+   "sha256": "fe36d1471d345fca7465f5d947091ffc1f8ec2a47cdb1121a2a3664c75286668",
+   "bytes": 31012
+  },
+  "media/more-comet.jpg": {
+   "sha256": "faf6af59df4d3b5daf5d182b08711714cbc8c3c4b2eeeefd9af8d0967c561a1c",
+   "bytes": 28268
+  },
+  "media/more-seasons.jpg": {
+   "sha256": "3b38867854fd9df450853f2265d9d2d9040a3e2a393b4a794e67dd3d22f9e853",
+   "bytes": 26029
+  },
+  "media/more-monty_c_av.jpg": {
+   "sha256": "637c5817ebfa9786fb0632aa3b466052788b7a352ac77019bfc242664dcec224",
+   "bytes": 7511
+  },
+  "media/more-simpson_c_av.jpg": {
+   "sha256": "134ace13096e6397121611c021d39d51c0248280ff6506eafa669591a56ce985",
+   "bytes": 17513
+  },
+  "media/video-v1.mp4": {
+   "sha256": "f580a8a6fd59d02ae72df8554f82d37406f959329d805a0c3da3ff1d7b594541",
+   "bytes": 240550
+  },
+  "index.html": {
+   "sha256": "0c8a85abfaeb94db8cc8ed7213ddd2d310132de70fc764a42667711798348885",
+   "bytes": 11733
+  }
+ }
+}
