@@ -1,0 +1,40 @@
+{
+ "schema": "iastudio-cad-viewer/1",
+ "part": "flange",
+ "title": "法兰盘 DN80",
+ "params": {
+  "od": 80,
+  "id": 30,
+  "thick": 8,
+  "holes": 4
+ },
+ "volume_mm3": 33977.39,
+ "bbox_diag_mm": 113.45,
+ "builtAt": "2026-10-21T05:55:35.691Z",
+ "assets": {
+  "index.html": {
+   "sha256": "706261dc8ceb6a554130f4b11404379bc3003ca8c6057f3309a6ff175aa3a815",
+   "bytes": 7185
+  },
+  "model.stl": {
+   "sha256": "0af736c8b232e8e71c471e86a31f5b154fd8f9a7a1c8406411e72a526db47ce6",
+   "bytes": 404084
+  },
+  "model.step": {
+   "sha256": "a8509edaf36b43cf6273d7c31e06481afad8065db020b6791092b3973e3e66e3",
+   "bytes": 62543
+  },
+  "vendor/three.module.js": {
+   "sha256": "ce1fa418de16a19495a9f72495580e3015d7745c296d3ce0485897f902ddedfb",
+   "bytes": 1314681
+  },
+  "vendor/STLLoader.js": {
+   "sha256": "be2c54987a2b7e5e94690566f1fd4c4a5fe700c3e54d7c5068838ec4ddb65146",
+   "bytes": 10055
+  },
+  "vendor/OrbitControls.js": {
+   "sha256": "6f3052dd8860a60fe6999260d50558ff54609523724c6e374326228e5590cf55",
+   "bytes": 32146
+  }
+ }
+}

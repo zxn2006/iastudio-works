@@ -1,0 +1,40 @@
+{
+ "schema": "iastudio-cad-viewer/1",
+ "part": "spurgear",
+ "title": "直齿轮 m2 z20",
+ "params": {
+  "module": 2,
+  "teeth": 20,
+  "width": 12,
+  "bore": 10
+ },
+ "volume_mm3": 12618.72,
+ "bbox_diag_mm": 63.1,
+ "builtAt": "2026-10-21T05:55:36.462Z",
+ "assets": {
+  "index.html": {
+   "sha256": "88a2ce8ef0f741166f6bfc12d60dba8e8ceffa926a1452fcc1bc24ad038b1797",
+   "bytes": 7194
+  },
+  "model.stl": {
+   "sha256": "29de4e4cc7ea15b6a7d45aafc973eb4bfdc9113858cc8d02a06c626e2ab493f3",
+   "bytes": 49284
+  },
+  "model.step": {
+   "sha256": "5117c30f217a46577d841c0bd5e517ebeddff55ded878ccb16aee96a7488a32d",
+   "bytes": 466873
+  },
+  "vendor/three.module.js": {
+   "sha256": "ce1fa418de16a19495a9f72495580e3015d7745c296d3ce0485897f902ddedfb",
+   "bytes": 1314681
+  },
+  "vendor/STLLoader.js": {
+   "sha256": "be2c54987a2b7e5e94690566f1fd4c4a5fe700c3e54d7c5068838ec4ddb65146",
+   "bytes": 10055
+  },
+  "vendor/OrbitControls.js": {
+   "sha256": "6f3052dd8860a60fe6999260d50558ff54609523724c6e374326228e5590cf55",
+   "bytes": 32146
+  }
+ }
+}

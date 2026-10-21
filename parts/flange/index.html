@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>法兰盘 DN80 · 交互 3D 查看器</title>
+<style>
+:root{--bg:#0b0e15;--surface:#1a1f2c;--line:#252b3b;--ink:#e8ebf2;--muted:#9aa3b5;--accent:#e8c47c;--accent2:#7c93ff;--font-display:"Segoe UI", system-ui, sans-serif;--font-body:"Segoe UI", "Microsoft YaHei", system-ui, sans-serif;--space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-5:24px;--space-6:32px;--space-7:48px;--space-8:64px;--radius:10px;--radius-sm:5px;--radius-lg:16px;;--ok:#2fb27a;--warn:#e6b85a;--err:#e0705f;--dur-fast:120ms;--dur-base:200ms;--dur-slow:320ms;--ease:cubic-bezier(.2,.7,.2,1)}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;background:var(--bg);color:var(--ink);font-family:var(--font-body);overflow:hidden}
+#cv{position:fixed;inset:0}
+aside{position:fixed;left:var(--space-6);top:var(--space-6);width:280px;padding:var(--space-5);border:1px solid var(--line);border-radius:var(--radius-lg);background:color-mix(in srgb,var(--surface) 82%,transparent);backdrop-filter:blur(10px)}
+.kicker{font-size:11px;letter-spacing:.22em;color:var(--accent);text-transform:uppercase}
+h1{font-family:var(--font-display);font-size:22px;margin:var(--space-2) 0 var(--space-3)}
+.rows div{display:flex;justify-content:space-between;font-size:13px;padding:6px 0;border-bottom:1px dashed var(--line)}
+.rows div:last-child{border:none}
+.rows b{font-variant-numeric:tabular-nums;color:var(--accent)}
+.dl{display:flex;flex-direction:column;gap:2px;margin-top:var(--space-3);padding:10px var(--space-3);border:1px solid var(--line);border-radius:var(--radius);text-decoration:none;color:var(--ink);font-size:13px}
+.dl:hover{border-color:var(--accent)}
+.dl span{font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums}
+.controls{display:flex;gap:8px;margin-top:var(--space-4);flex-wrap:wrap}
+button{font:inherit;font-size:12px;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+button.on{border-color:var(--accent);color:var(--accent)}
+label.slider{display:block;margin-top:var(--space-3);font-size:12px;color:var(--muted)}
+input[type=range]{width:100%;accent-color:var(--accent)}
+.hint{position:fixed;right:var(--space-5);bottom:var(--space-5);font-size:11px;color:var(--muted)}
+@media(max-width:720px){aside{left:8px;right:8px;top:8px;width:auto;padding:var(--space-3)}h1{font-size:18px}}
+</style>
+<script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head><body>
+<canvas id="cv"></canvas>
+<aside>
+  <p class="kicker">IAStudio · 参数化零件</p>
+  <h1>法兰盘 DN80</h1>
+  <div class="rows">
+    <div><span>od</span><b>80</b></div><div><span>id</span><b>30</b></div><div><span>thick</span><b>8</b></div><div><span>holes</span><b>4</b></div>
+    <div><span>体积</span><b>33977.39 mm³</b></div>
+    <div><span>包围盒对角</span><b>113.45 mm</b></div>
+  </div>
+  <a class="dl" href="model.step" download><b>STEP 实体（可投产）</b><span>61.1 KB · sha a8509edaf36b</span></a>
+    <a class="dl" href="model.stl" download><b>STL 网格（可打印/渲染）</b><span>394.6 KB · sha 0af736c8b232</span></a>
+  <div class="controls">
+    <button id="bSpin" class="on">自动旋转</button>
+    <button id="bWire">线框</button>
+    <button id="bReset">复位</button>
+  </div>
+  <label class="slider">Z 向剖切 <input id="cut" type="range" min="0" max="100" value="100"></label>
+</aside>
+<p class="hint">拖拽旋转 · 滚轮缩放 · 右键平移</p>
+<script type="module">
+import * as THREE from 'three';
+import { STLLoader } from './vendor/STLLoader.js';
+import { OrbitControls } from './vendor/OrbitControls.js';
+const T = {"bg":"#0b0e15","surface":"#1a1f2c","line":"#252b3b","ink":"#e8ebf2","muted":"#9aa3b5","accent":"#e8c47c","accent2":"#7c93ff"};
+const cv = document.getElementById('cv');
+const renderer = new THREE.WebGLRenderer({ canvas: cv, antialias: true });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.setSize(innerWidth, innerHeight);
+renderer.localClippingEnabled = true;
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(T.bg);
+const camera = new THREE.PerspectiveCamera(38, innerWidth / innerHeight, .1, 8000);
+
+const mat = new THREE.MeshStandardMaterial({ color: T.muted, metalness: .72, roughness: .32, side: THREE.DoubleSide });
+const wireMat = new THREE.MeshBasicMaterial({ color: T.accent, wireframe: true, transparent: true, opacity: .55 });
+const plane = new THREE.Plane(new THREE.Vector3(0, 0, -1), 1e9);
+mat.clippingPlanes = [plane];
+wireMat.clippingPlanes = [plane];                  /* 线框材质也必须挂剖切面，否则切到线框后滑块失效 */
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true; controls.dampingFactor = .08;
+controls.autoRotate = true; controls.autoRotateSpeed = 1.2;
+
+new STLLoader().load('./model.stl', geo => {
+  geo.center();
+  const bb = geo.boundingBox, size = new THREE.Vector3(); bb.getSize(size);
+  const maxR = Math.max(size.x, size.y, size.z);
+  plane.constant = size.z * .55;                     // 剖切初始=全显示
+  window.__SPAN = size.z;
+  const mesh = new THREE.Mesh(geo, mat);
+  scene.add(mesh);
+  window.__MESH = mesh;
+  const k = maxR / 2;
+  camera.position.set(k * 1.5, k * 1.1, k * 2.1);
+  camera.near = k / 100; camera.far = k * 100; camera.updateProjectionMatrix();
+  controls.target.set(0, 0, 0); controls.update();
+  controls.saveState();                              /* 必须在相机就位后存档：构造时相机在原点，reset 会白屏 */
+  scene.add(new THREE.HemisphereLight(T.ink, T.bg, 1.1));
+  const d1 = new THREE.DirectionalLight(T.ink, 2.2); d1.position.set(1, 2, 1.6); scene.add(d1);
+  const d2 = new THREE.DirectionalLight(T.accent, 1.1); d2.position.set(-1.6, -.6, -1.2); scene.add(d2);
+  window.READY = true;
+}, undefined, e => { console.error('STL 加载失败', e); });
+
+let spin = true, wire = false;
+document.getElementById('bSpin').onclick = e => { spin = !spin; controls.autoRotate = spin; e.target.classList.toggle('on', spin); };
+document.getElementById('bWire').onclick = e => {
+  wire = !wire; e.target.classList.toggle('on', wire);
+  if (window.__MESH) window.__MESH.material = wire ? wireMat : mat;
+};
+document.getElementById('bReset').onclick = () => {
+  controls.reset();                                  /* 回到加载时 saveState 的位姿 */
+  document.getElementById('cut').value = 100; plane.constant = window.__SPAN ? window.__SPAN * .55 : 1e9;
+};
+document.getElementById('cut').oninput = e => {
+  const v = +e.target.value / 100;                     // 100=完整，0=剖到底
+  plane.constant = window.__SPAN ? (v - .5) * window.__SPAN * 1.05 : 1e9;
+};
+
+addEventListener('resize', () => {
+  camera.aspect = innerWidth / innerHeight; camera.updateProjectionMatrix();
+  renderer.setSize(innerWidth, innerHeight);
+});
+(function loop() { requestAnimationFrame(loop); controls.update(); renderer.render(scene, camera); })();
+</script>
+</body></html>
