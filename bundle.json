@@ -1,10 +1,16 @@
 {
  "schema": "ia-trust-bundle/1",
- "builtAt": "2026-10-20T23:44:24.910Z",
+ "builtAt": "2026-10-21T04:07:18.641Z",
  "works": [
   "media/birthday_c_av.mp4",
   "media/blackhole.mp4",
   "media/agent-18pct.mp4"
+ ],
+ "shelf": [
+  "media/pool-shuju.mp4",
+  "media/pool-zhishi.mp4",
+  "media/pool-jinju.mp4",
+  "media/pool-xuanchuan.mp4"
  ],
  "sample": "media/video-v1.mp4",
  "assets": {
@@ -96,13 +102,45 @@
    "sha256": "134ace13096e6397121611c021d39d51c0248280ff6506eafa669591a56ce985",
    "bytes": 17513
   },
+  "media/pool-shuju.mp4": {
+   "sha256": "bff55188cd937370b8b23c35320246bdd9f7d95683a8dc027d0ca43f13014224",
+   "bytes": 2005455
+  },
+  "media/pool-shuju.jpg": {
+   "sha256": "c021bf140e775d4c6a908475d599e29f9d1400eea498ce4ae160a3b39220e841",
+   "bytes": 134191
+  },
+  "media/pool-zhishi.mp4": {
+   "sha256": "4793866e8a1c28efef36f6105a51b29889805ab085f267127ba13646bbdd33a4",
+   "bytes": 987261
+  },
+  "media/pool-zhishi.jpg": {
+   "sha256": "39dec72aa566cfb56527c14e28929c85ae5377d46b310071fbd968b367d0d12b",
+   "bytes": 70016
+  },
+  "media/pool-jinju.mp4": {
+   "sha256": "a2eb46088faf2341b26acaf42afaa26531842ab033867f7a304d2dda82857e96",
+   "bytes": 1315302
+  },
+  "media/pool-jinju.jpg": {
+   "sha256": "743c18c1a581a4e904fe83691b39df997a9dcad628b123ac007f7b5c6698b1f1",
+   "bytes": 61422
+  },
+  "media/pool-xuanchuan.mp4": {
+   "sha256": "480d22bfaec418d98c09bb26f9fcd657a6ea8a7b3d0b70fab0b76ce58d29dc4c",
+   "bytes": 1438071
+  },
+  "media/pool-xuanchuan.jpg": {
+   "sha256": "b28c10bd9e4ca39f7f1eace81cb6d688891fa0d308577544d1c45015d4744a9d",
+   "bytes": 48297
+  },
   "media/video-v1.mp4": {
    "sha256": "f580a8a6fd59d02ae72df8554f82d37406f959329d805a0c3da3ff1d7b594541",
    "bytes": 240550
   },
   "index.html": {
-   "sha256": "0c8a85abfaeb94db8cc8ed7213ddd2d310132de70fc764a42667711798348885",
-   "bytes": 11733
+   "sha256": "9756af7f2d3f98ab8755f92860fad9d07e958addb530ea2b7beda1b7b3e2fcac",
+   "bytes": 13969
   }
  }
 }
