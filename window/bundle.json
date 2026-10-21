@@ -1,0 +1,99 @@
+{
+ "schema": "ia-window-bundle/1",
+ "builtAt": "2026-10-21T05:14:06.722Z",
+ "shelf": [
+  "media/pool-shuju.mp4",
+  "media/pool-zhishi.mp4",
+  "media/pool-jinju.mp4",
+  "media/pool-xuanchuan.mp4"
+ ],
+ "featured": [
+  "media/opus-glass-prod2.mp4"
+ ],
+ "assets": {
+  "fonts/noto-sans-sc.woff2": {
+   "sha256": "95e3633b6a98f764ba3adfb54504a0cd4799328c009adf9081d6c1850f9c4c78",
+   "bytes": 1142552
+  },
+  "fonts/noto-serif-sc.woff2": {
+   "sha256": "0d5a3fd4981d7cc03ad357775de336b27d41394158d52c7bdda1ab2c68fa1845",
+   "bytes": 1509736
+  },
+  "fonts/inter.woff2": {
+   "sha256": "8909904ab6c872eb994093482a88a28eca2cd95912d7b6fecd72103b0dc07edc",
+   "bytes": 23664
+  },
+  "fonts/roboto.woff2": {
+   "sha256": "425c0713a8176f92273d378599c7eac57de7fafabd4bd0ed457b70eb8f80d371",
+   "bytes": 21884
+  },
+  "fonts/playfair-display.woff2": {
+   "sha256": "1fe9ad5d8b2ebd8ecb8fbd05bed1e3fdfa52dae3f1a04e1c219918442fe9394d",
+   "bytes": 21856
+  },
+  "fonts/merriweather.woff2": {
+   "sha256": "66f5bd22d738a801a9e58d71920559743b0baaced04be299e3c4feca3dce3556",
+   "bytes": 49168
+  },
+  "fonts/jetbrains-mono.woff2": {
+   "sha256": "14425ba9c695763c1547f48a206b7aa60350a33ae23de09f0407877f3fcd89eb",
+   "bytes": 21168
+  },
+  "fonts/fira-code.woff2": {
+   "sha256": "6dc9da171ccea71d525379ee1cbf51d143e31acac330a251bb71b3d6060e687c",
+   "bytes": 23312
+  },
+  "fonts/archivo-black.woff2": {
+   "sha256": "25f33e61cf995abd6be62931cf03bf427286259177b43618cc410ee0157cfd30",
+   "bytes": 18604
+  },
+  "fonts/bebas-neue.woff2": {
+   "sha256": "a7c90c89240c134f7fdd33d40c000ec90b79d675ea53e8cc5a6d423c073de412",
+   "bytes": 13768
+  },
+  "media/pool-shuju.mp4": {
+   "sha256": "bff55188cd937370b8b23c35320246bdd9f7d95683a8dc027d0ca43f13014224",
+   "bytes": 2005455
+  },
+  "media/pool-shuju.jpg": {
+   "sha256": "c021bf140e775d4c6a908475d599e29f9d1400eea498ce4ae160a3b39220e841",
+   "bytes": 134191
+  },
+  "media/pool-zhishi.mp4": {
+   "sha256": "4793866e8a1c28efef36f6105a51b29889805ab085f267127ba13646bbdd33a4",
+   "bytes": 987261
+  },
+  "media/pool-zhishi.jpg": {
+   "sha256": "39dec72aa566cfb56527c14e28929c85ae5377d46b310071fbd968b367d0d12b",
+   "bytes": 70016
+  },
+  "media/pool-jinju.mp4": {
+   "sha256": "a2eb46088faf2341b26acaf42afaa26531842ab033867f7a304d2dda82857e96",
+   "bytes": 1315302
+  },
+  "media/pool-jinju.jpg": {
+   "sha256": "743c18c1a581a4e904fe83691b39df997a9dcad628b123ac007f7b5c6698b1f1",
+   "bytes": 61422
+  },
+  "media/pool-xuanchuan.mp4": {
+   "sha256": "480d22bfaec418d98c09bb26f9fcd657a6ea8a7b3d0b70fab0b76ce58d29dc4c",
+   "bytes": 1438071
+  },
+  "media/pool-xuanchuan.jpg": {
+   "sha256": "b28c10bd9e4ca39f7f1eace81cb6d688891fa0d308577544d1c45015d4744a9d",
+   "bytes": 48297
+  },
+  "media/opus-glass-prod2.mp4": {
+   "sha256": "29664d02e893d73992adb9426123f94153e7415c21780ce5d650f13591cc9a16",
+   "bytes": 4027055
+  },
+  "media/opus-glass-prod2.jpg": {
+   "sha256": "afb7bee0a7da74dcee934b013a84b036ac390f1cb2ffe48e3281b3c1452a4098",
+   "bytes": 64145
+  },
+  "index.html": {
+   "sha256": "8334b468d6d54b0fb36078c0564e222c6a33182a60780158277fac594c749af4",
+   "bytes": 13202
+  }
+ }
+}
