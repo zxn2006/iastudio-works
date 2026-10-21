@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>摆线针轮减速器 · 装配查看器</title>
+<link rel="icon" href="data:,">
+<style>
+:root{--bg:#0b0e15;--surface:#1a1f2c;--line:#252b3b;--ink:#e8ebf2;--muted:#9aa3b5;--accent:#e8c47c;--accent2:#7c93ff;--font-display:"Segoe UI", system-ui, sans-serif;--font-body:"Segoe UI", "Microsoft YaHei", system-ui, sans-serif;--space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-5:24px;--space-6:32px;--space-7:48px;--space-8:64px;--radius:10px;--radius-sm:5px;--radius-lg:16px;;--ok:#2fb27a;--warn:#e6b85a;--err:#e0705f;--dur-fast:120ms;--dur-base:200ms;--dur-slow:320ms;--ease:cubic-bezier(.2,.7,.2,1)}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;background:var(--bg);color:var(--ink);font-family:var(--font-body);overflow:hidden}
+#cv,#lab{position:fixed;inset:0}
+#lab{pointer-events:none}
+aside{position:fixed;left:var(--space-6);top:var(--space-6);width:290px;padding:var(--space-5);border:1px solid color-mix(in srgb,var(--line) 80%,transparent);border-radius:var(--radius-lg);background:color-mix(in srgb,var(--surface) 78%,transparent);backdrop-filter:blur(14px);box-shadow:0 18px 50px color-mix(in srgb,var(--bg) 70%,transparent)}
+.kicker{font-size:10.5px;letter-spacing:.24em;color:var(--accent);text-transform:uppercase}
+h1{font-family:var(--font-display);font-size:23px;margin:6px 0 var(--space-3);letter-spacing:.02em}
+.rows div{display:flex;justify-content:space-between;font-size:12.5px;padding:5px 0;border-bottom:1px dashed color-mix(in srgb,var(--line) 70%,transparent)}
+.rows div:last-child{border:none}
+.rows b{font-variant-numeric:tabular-nums;color:var(--accent);font-weight:600}
+h2{font-size:11px;letter-spacing:.16em;color:var(--muted);text-transform:uppercase;margin:var(--space-4) 0 var(--space-2);font-weight:600}
+ul.parts{list-style:none}
+ul.parts li{display:flex;align-items:center;gap:8px;padding:7px 9px;border-radius:var(--radius-sm);font-size:13px;cursor:pointer;transition:background var(--dur-fast) var(--ease)}
+ul.parts li:hover{background:color-mix(in srgb,var(--accent) 12%,transparent)}
+ul.parts li.on{background:color-mix(in srgb,var(--accent) 20%,transparent);box-shadow:inset 2px 0 0 var(--accent)}
+ul.parts i{width:9px;height:9px;border-radius:50%;flex:0 0 auto}
+ul.parts b{font-weight:500}
+ul.parts span{margin-left:auto;font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums}
+.controls{display:flex;gap:6px;margin-top:var(--space-4);flex-wrap:wrap}
+button{font:inherit;font-size:11.5px;padding:6px 11px;border-radius:999px;border:1px solid color-mix(in srgb,var(--line) 85%,transparent);background:transparent;color:var(--muted);cursor:pointer;transition:all var(--dur-fast) var(--ease)}
+button:hover{border-color:var(--accent);color:var(--ink)}
+button.on{border-color:var(--accent);color:var(--bg);background:var(--accent)}
+label.slider{display:block;margin-top:var(--space-3);font-size:11.5px;color:var(--muted)}
+label.slider output{float:right;color:var(--accent);font-variant-numeric:tabular-nums}
+input[type=range]{width:100%;margin-top:5px;accent-color:var(--accent)}
+.hint{position:fixed;right:var(--space-5);bottom:var(--space-5);font-size:11px;color:var(--muted);letter-spacing:.04em}
+@media(max-width:760px){aside{left:8px;right:8px;top:8px;width:auto;padding:var(--space-3)}ul.parts{display:none}h1{font-size:18px}}
+</style>
+<script type="importmap">{"imports":{"three":"../../vendor/three.module.js"}}</script>
+</head><body>
+<canvas id="cv"></canvas><canvas id="lab"></canvas>
+<aside>
+  <p class="kicker">IAStudio · 装配体</p>
+  <h1>摆线针轮减速器</h1>
+  <div class="rows">
+    <div><span>R</span><b>40</b></div><div><span>rr</span><b>4.5</b></div><div><span>ecc</span><b>2.4</b></div><div><span>lobes</span><b>9</b></div><div><span>width</span><b>10</b></div><div><span>减速比</span><b>9:1</b></div><div><span>啮合间隙</span><b>0 mm</b></div>
+    <div><span>零件</span><b>6 类 / 15 件</b></div>
+  </div>
+  <h2>零件</h2>
+  <ul class="parts">
+    <li data-name="housing"><i style="background:var(--accent)"></i><b>针齿壳</b><span>1 件</span></li>
+    <li data-name="pin"><i style="background:var(--ink)"></i><b>针齿销</b><span>10 件</span></li>
+    <li data-name="disc_a"><i style="background:var(--accent2)"></i><b>摆线轮 A</b><span>1 件</span></li>
+    <li data-name="disc_b"><i style="background:var(--accent2)"></i><b>摆线轮 B</b><span>1 件</span></li>
+    <li data-name="eccentric_shaft"><i style="background:var(--ink)"></i><b>偏心轴</b><span>1 件</span></li>
+    <li data-name="output_carrier"><i style="background:var(--accent)"></i><b>输出盘</b><span>1 件</span></li>
+  </ul>
+  <div class="controls">
+    <button id="bSpin" class="on">自动旋转</button>
+    <button id="bRun" class="on">运转</button>
+    <button id="bLabel">标注</button>
+    <button id="bReset">复位</button>
+  </div>
+  <label class="slider">爆炸视图 <output id="cutv">45%</output><input id="cut" type="range" min="0" max="100" value="45"></label>
+</aside>
+<p class="hint">拖拽旋转 · 滚轮缩放 · 点零件隔离</p>
+<script type="module">
+import * as THREE from 'three';
+import { STLLoader } from '../../vendor/STLLoader.js';
+import { OrbitControls } from '../../vendor/OrbitControls.js';
+const T = {"bg":"#0b0e15","surface":"#1a1f2c","line":"#252b3b","ink":"#e8ebf2","muted":"#9aa3b5","accent":"#e8c47c","accent2":"#7c93ff"};
+const ROLE = {"housing":"accent","shaft":"ink","rolling":"accent2","retainer":"muted","pin":"ink","disc":"accent2","output":"accent"};
+/* 装配数据运行时读 assembly.json（单一事实源）—— 内嵌副本会造成两个口径 */
+const A = await (await fetch('./assembly.json')).json();
+const MOT = A.motion || {};
+const W = (MOT.rpm || 6) * Math.PI / 30;   /* rpm → rad/s（与收据同源） */
+const SPAN = (A.view && A.view.span) || 120;
+const EXP0 = 0.45;                                          /* 初始爆炸比例（收据可调） */
+const EXPLODE_K = 16;                                          /* 爆炸位移系数（mm 尺度） */
+const cv = document.getElementById('cv'), labCv = document.getElementById('lab'), lab = labCv.getContext('2d');
+const renderer = new THREE.WebGLRenderer({ canvas: cv, antialias: true });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.setSize(innerWidth, innerHeight);
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.15;
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(T.bg);
+scene.fog = new THREE.Fog(T.bg, 260, 620);
+const camera = new THREE.PerspectiveCamera(36, innerWidth / innerHeight, .5, 4000);
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true; controls.dampingFactor = .06;
+controls.autoRotate = true; controls.autoRotateSpeed = .9;
+controls.minDistance = 40; controls.maxDistance = 520;
+
+/* 每零件一色（按角色映射令牌；色值本身仍只在 design-tokens 定义） */
+const ROLE_COLOR = Object.fromEntries(A.parts.map(p => [p.name, T[ROLE[p.role] || 'muted']]));
+const groups = {}, mats = {}, meshes = [];
+const load = f => new Promise((res, rej) => new STLLoader().load('./' + f, res, undefined, rej));
+
+Promise.all([...new Set(A.parts.map(p => p.file))].map(f => load(f).then(g => [f, g]))).then(pairs => {
+  const geo = Object.fromEntries(pairs);
+  for (const spec of A.parts) {
+    const g = new THREE.Group();
+    /* transparent 从一开始就开：three 从 opaque 切 transparent 需要 needsUpdate，运行期切换会静默失效 */
+    const m = new THREE.MeshStandardMaterial({ color: ROLE_COLOR[spec.name] || T.muted, metalness: .82, roughness: .28, emissive: T.bg, emissiveIntensity: 0, transparent: true, opacity: 1 });
+    mats[spec.name] = m;
+    for (const ins of spec.instances) {
+      const mesh = new THREE.Mesh(geo[spec.file], m);
+      mesh.position.set(...ins.pos);
+      mesh.rotation.set(...ins.rot.map(d => d * Math.PI / 180));
+      mesh.userData = { part: spec.name, base: ins.pos.slice(), role: spec.role, explode: spec.explode };
+      g.add(mesh); meshes.push(mesh);
+    }
+    g.userData = { spec };
+    groups[spec.name] = g; scene.add(g);
+  }
+  /* 光：三向 + 环境（金属材质要有环境反射才不塑料） */
+  scene.add(new THREE.HemisphereLight(T.ink, T.bg, 1.35));
+  const k1 = new THREE.DirectionalLight(T.ink, 2.6); k1.position.set(120, 190, 150); scene.add(k1);
+  const k2 = new THREE.DirectionalLight(T.accent, 1.5); k2.position.set(-170, -40, -120); scene.add(k2);
+  const p1 = new THREE.PointLight(T.accent2, 2.2e4, 400); p1.position.set(0, 120, 90); scene.add(p1);
+  const span = SPAN;
+  /* 俯视 34° 机位：环类不挡住滚珠，「8 颗球」首屏可读 */
+  camera.position.set(span * .82, span * 1.02, span * 1.02);
+  camera.lookAt(0, 0, 0);
+  controls.target.set(0, 0, 0); controls.update(); controls.saveState();
+  window.READY = true;
+}, e => console.error('STL 加载失败', e));
+
+let spin = true, running = true, labels = false, isolate = null, explode = EXP0;   /* 默认爆炸比例由收据给：简化几何无滚道沟槽，合拢时滚珠会被套圈完全包住 */
+const setBtn = (id, on) => document.getElementById(id).classList.toggle('on', on);
+document.getElementById('bSpin').onclick = e => { spin = !spin; controls.autoRotate = spin; setBtn('bSpin', spin); };
+document.getElementById('bRun').onclick = e => { running = !running; setBtn('bRun', running); };
+document.getElementById('bLabel').onclick = e => { labels = !labels; setBtn('bLabel', labels); };
+document.getElementById('bReset').onclick = () => {
+  controls.reset(); explode = EXP0; const p0 = 45;
+  document.getElementById('cut').value = p0;
+  document.getElementById('cutv').textContent = p0 + '%'; isolate = null;
+  running = true; spin = true; labels = false;                    /* 开关也回初始，不只回相机 */
+  controls.autoRotate = true;
+  setBtn('bSpin', true); setBtn('bRun', true); setBtn('bLabel', false);
+  document.querySelectorAll('ul.parts li').forEach(x => x.classList.remove('on'));
+};
+document.getElementById('cut').oninput = e => {
+  explode = +e.target.value / 100;
+  document.getElementById('cutv').textContent = e.target.value + '%';
+};
+document.querySelectorAll('ul.parts li').forEach(li => {
+  li.onclick = () => {
+    const n = li.dataset.name;
+    isolate = isolate === n ? null : n;
+    document.querySelectorAll('ul.parts li').forEach(x => x.classList.toggle('on', x.dataset.name === isolate));
+  };
+});
+/* 悬停高亮（emissive 提亮，不改颜色 = 不违反令牌单源） */
+const ray = new THREE.Raycaster(), ptr = new THREE.Vector2(-9, -9);
+addEventListener('pointermove', e => {
+  ptr.x = (e.clientX / innerWidth) * 2 - 1; ptr.y = -(e.clientY / innerHeight) * 2 + 1;
+});
+const tmpV = new THREE.Vector3();
+let hovered = null;
+function updateHover() {
+  ray.setFromCamera(ptr, camera);
+  const hit = ray.intersectObjects(meshes, false)[0];
+  if (hovered && hovered !== hit?.object) { hovered.material.emissiveIntensity = 0; hovered.scale.setScalar(1); }
+  hovered = hit ? hit.object : null;
+  if (hovered) { hovered.material.emissiveIntensity = .35; hovered.scale.setScalar(1.015); }
+}
+
+const resizeLab = () => { labCv.width = innerWidth * devicePixelRatio; labCv.height = innerHeight * devicePixelRatio; labCv.style.width = innerWidth + 'px'; labCv.style.height = innerHeight + 'px'; lab.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0); };
+resizeLab();
+addEventListener('resize', () => {
+  camera.aspect = innerWidth / innerHeight; camera.updateProjectionMatrix();
+  renderer.setSize(innerWidth, innerHeight); resizeLab();
+});
+
+/* 标注锚点（屏幕空间）：先投影零件中心，再沿屏幕径向偏移到零件轮廓上。
+ * 关键几何事实：3D 里取「中心朝相机方向的表面点」与中心共线，投影后仍落在中心——
+ * 所以偏移必须发生在屏幕平面内，而不是三维里。方位按零件固定分散，永不重叠。 */
+const ANCHOR_DIR = { outer_ring: 0, inner_ring: Math.PI, ball: -Math.PI / 2, cage: Math.PI / 2 };
+function anchorScreen(spec, i) {
+  const g = groups[spec.name];
+  if (!g || !g.children.length) return null;
+  const wp = new THREE.Vector3(), p = new THREE.Vector3();
+  let r = 0;
+  if (spec.name === 'ball') {
+    g.children[0].getWorldPosition(wp);                    /* 用第一颗球：8 颗对称，平均值恒在轴上 */
+  } else {
+    for (const m of g.children) { m.getWorldPosition(p); wp.add(p); }
+    wp.divideScalar(g.children.length);
+  }
+  for (const m of g.children) {
+    if (!m.geometry.boundingSphere) m.geometry.computeBoundingSphere();
+    r = Math.max(r, m.geometry.boundingSphere.radius);
+  }
+  const c2 = wp.clone().project(camera);
+  const cx = (c2.x * .5 + .5) * innerWidth, cy = (-c2.y * .5 + .5) * innerHeight;
+  /* 半径换算成像素：把中心沿世界 +X 偏 r 再投影，取屏幕距离 */
+  const e2 = wp.clone().add(new THREE.Vector3(r, 0, 0)).project(camera);
+  const ex = (e2.x * .5 + .5) * innerWidth, ey = (-e2.y * .5 + .5) * innerHeight;
+  const rpx = Math.hypot(ex - cx, ey - cy);
+  /* 同心件（轴承/减速器）中心投影会叠在一起：按索引均分方位，否则标注必然重叠 */
+  const th = ANCHOR_DIR[spec.name] != null ? ANCHOR_DIR[spec.name]
+    : (i / Math.max(1, A.parts.length)) * Math.PI * 2 - Math.PI / 2;
+  return { x: cx + Math.cos(th) * rpx * .9, y: cy + Math.sin(th) * rpx * .9 };
+}
+function drawLabels() {
+  lab.clearRect(0, 0, innerWidth, innerHeight);
+  if (!labels) return;
+  lab.font = '600 12px "Noto Sans SC"';
+  const dirs = [[1, -1], [-1, -1], [1, 1], [-1, 1]];
+  A.parts.forEach((spec, i) => {
+    const a = anchorScreen(spec, i); if (!a) return;
+    const { x, y } = a;
+    const [sx, sy] = dirs[i % dirs.length];
+    const ex = x + sx * 64, ey = y + sy * 52;
+    lab.strokeStyle = 'rgba(255,255,255,.5)'; lab.lineWidth = 1;
+    lab.beginPath(); lab.moveTo(x, y); lab.lineTo(ex, ey); lab.stroke();
+    lab.fillStyle = 'rgba(255,255,255,.9)'; lab.beginPath(); lab.arc(x, y, 2.4, 0, 7); lab.fill();
+    const w = lab.measureText(spec.label).width + 14;
+    lab.fillStyle = 'rgba(10,14,20,.88)';
+    lab.fillRect(sx > 0 ? ex + 4 : ex - w - 4, ey - 10, w, 20);
+    lab.fillStyle = T.ink;
+    lab.fillText(spec.label, (sx > 0 ? ex + 11 : ex - w + 3), ey + 4);
+  });
+}
+
+const clock = new THREE.Clock();
+let tAcc = 0;
+(function loop() {
+  requestAnimationFrame(loop);
+  const dt = Math.min(clock.getDelta(), .05);
+  if (running) tAcc += dt;
+  /* 爆炸：环类沿轴向分离；滚珠/保持架沿节圆径向散开（标准爆炸图语义） */
+  for (const spec of A.parts) {
+    const g = groups[spec.name]; if (!g) continue;
+    g.position.set(0, 0, 0);
+    const radial = spec.role === 'rolling' || spec.role === 'retainer';
+    for (const m of g.children) {
+      const b = m.userData.base, ex = m.userData.explode;
+      if (radial) {
+        m.position.set(b[0] * (1 + explode * .55), b[1] * (1 + explode * .55), b[2] + ex[2] * explode * EXPLODE_K);
+      } else {
+        m.position.set(b[0], b[1], b[2] + ex[2] * explode * EXPLODE_K);
+      }
+    }
+  }
+  /* 运转（确定性：线性，无随机）——运动学全部来自 assembly.json 的 kin，
+   * 摆线额外靠轮心公转：刚性体 = 平移(轮心) + 绕自身轴自转，两者都写在收据里，页面不做推断。
+   * 轮心位置必须「减去基准相位」：实例位姿已含 t=0 的偏心 (±e,0)，否则起始帧偏心翻倍。 */
+  if (MOT.type === 'cycloidal') {
+    const E = MOT.eccentricity;
+    for (const spec of A.parts) {
+      const g = groups[spec.name]; if (!g) continue;
+      const k = spec.kin || {};
+      if (k.orbit) {
+        const ph = k.phase || 0, a = tAcc * W + ph;
+        g.position.set(E * (Math.cos(a) - Math.cos(ph)), E * (Math.sin(a) - Math.sin(ph)), 0);
+      }
+      if (k.rotMul) g.rotation.z = tAcc * W * k.rotMul + (k.rot0 || 0);
+    }
+  } else {
+    if (groups.ball) groups.ball.rotation.z = tAcc * W;
+    if (groups.cage) groups.cage.rotation.z = tAcc * W;
+    if (groups.inner_ring) groups.inner_ring.rotation.z = -tAcc * W * .6;
+  }
+  /* 隔离：非选中材质降透明（材质每类一份，按 part 设一次即可；transparent 已在构造期开启） */
+  for (const [name, m] of Object.entries(mats)) {
+    const dim = isolate && name !== isolate;
+    m.opacity = dim ? .14 : 1;
+    m.depthWrite = !dim;
+  }
+  updateHover();
+  controls.update();
+  renderer.render(scene, camera);
+  drawLabels();
+})();
+</script>
+</body></html>

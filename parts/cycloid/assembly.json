@@ -1,0 +1,378 @@
+{
+ "schema": "iastudio-cad-assembly/1",
+ "assembly": "cycloid",
+ "params": {
+  "R": 40,
+  "rr": 4.5,
+  "ecc": 2.4,
+  "lobes": 9,
+  "width": 10
+ },
+ "parts": [
+  {
+   "name": "housing",
+   "label": "针齿壳",
+   "role": "housing",
+   "file": "housing.stl",
+   "explode": [
+    0,
+    0,
+    1.1
+   ],
+   "instances": [
+    {
+     "pos": [
+      0,
+      0,
+      0
+     ],
+     "rot": [
+      0,
+      0,
+      0
+     ]
+    }
+   ]
+  },
+  {
+   "name": "pin",
+   "label": "针齿销",
+   "role": "pin",
+   "file": "pin.stl",
+   "explode": [
+    0,
+    0,
+    0
+   ],
+   "instances": [
+    {
+     "pos": [
+      40,
+      0,
+      0
+     ],
+     "rot": [
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "pos": [
+      32.361,
+      23.511,
+      0
+     ],
+     "rot": [
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "pos": [
+      12.361,
+      38.042,
+      0
+     ],
+     "rot": [
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "pos": [
+      -12.361,
+      38.042,
+      0
+     ],
+     "rot": [
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "pos": [
+      -32.361,
+      23.511,
+      0
+     ],
+     "rot": [
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "pos": [
+      -40,
+      0,
+      0
+     ],
+     "rot": [
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "pos": [
+      -32.361,
+      -23.511,
+      0
+     ],
+     "rot": [
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "pos": [
+      -12.361,
+      -38.042,
+      0
+     ],
+     "rot": [
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "pos": [
+      12.361,
+      -38.042,
+      0
+     ],
+     "rot": [
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "pos": [
+      32.361,
+      -23.511,
+      0
+     ],
+     "rot": [
+      0,
+      0,
+      0
+     ]
+    }
+   ]
+  },
+  {
+   "name": "disc_a",
+   "label": "摆线轮 A",
+   "role": "disc",
+   "file": "cycloid_disc_a.stl",
+   "explode": [
+    0,
+    0,
+    -0.5
+   ],
+   "kin": {
+    "orbit": true,
+    "phase": 0,
+    "rotMul": -0.1111111111111111
+   },
+   "instances": [
+    {
+     "pos": [
+      2.4,
+      0,
+      -6.5
+     ],
+     "rot": [
+      0,
+      0,
+      0
+     ]
+    }
+   ]
+  },
+  {
+   "name": "disc_b",
+   "label": "摆线轮 B",
+   "role": "disc",
+   "file": "cycloid_disc_b.stl",
+   "explode": [
+    0,
+    0,
+    0.5
+   ],
+   "kin": {
+    "orbit": true,
+    "phase": 3.141592653589793,
+    "rotMul": -0.1111111111111111,
+    "rot0": -0.3490658503988659
+   },
+   "instances": [
+    {
+     "pos": [
+      -2.4,
+      0,
+      6.5
+     ],
+     "rot": [
+      0,
+      0,
+      0
+     ]
+    }
+   ]
+  },
+  {
+   "name": "eccentric_shaft",
+   "label": "偏心轴",
+   "role": "shaft",
+   "file": "eccentric_shaft.stl",
+   "explode": [
+    0,
+    0,
+    0
+   ],
+   "kin": {
+    "rotMul": 1
+   },
+   "instances": [
+    {
+     "pos": [
+      0,
+      0,
+      0
+     ],
+     "rot": [
+      0,
+      0,
+      0
+     ]
+    }
+   ]
+  },
+  {
+   "name": "output_carrier",
+   "label": "输出盘",
+   "role": "output",
+   "file": "output_carrier.stl",
+   "explode": [
+    0,
+    0,
+    -1.2
+   ],
+   "kin": {
+    "rotMul": -0.1111111111111111
+   },
+   "instances": [
+    {
+     "pos": [
+      0,
+      0,
+      0
+     ],
+     "rot": [
+      0,
+      0,
+      0
+     ]
+    }
+   ]
+  }
+ ],
+ "motion": {
+  "type": "cycloidal",
+  "rpm": 40,
+  "lobes": 9,
+  "eccentricity": 2.4,
+  "ratio": 9,
+  "note": "偏心轴 1 转 → 摆线轮公转 1 圈 + 反向自转 1/N；输出盘与摆线轮同速，减速比 N:1"
+ },
+ "view": {
+  "span": 150
+ },
+ "verify": {
+  "min_clearance_mm": 0,
+  "output_play_mm": 0.35
+ },
+ "files": {
+  "housing": {
+   "stl": {
+    "sha256": "99a3a85b1ecd39fd9e077db0f39cb47c61157e41a658c799af14b86929e49e2d",
+    "bytes": 202884
+   },
+   "step": {
+    "sha256": "73c9e5d299701d20de43482165caa2e45aa39796bce72dc256f1b397a08c3eee",
+    "step_norm_sha256": "888e5c0081fb7ba31390db49035a6db1020a032da3263c206f53705f1883131e",
+    "bytes": 39217
+   },
+   "volume_mm3": 111610.29
+  },
+  "pin": {
+   "stl": {
+    "sha256": "d8cdcb46e351ec2efe9ab9491a066c3a1149f66ca7ee1d00dc7b691e6dc2341f",
+    "bytes": 25084
+   },
+   "step": {
+    "sha256": "43b31fc568f2d067faf1bbe3d397e800d0c3087a2f24d9795c02a9f84607786f",
+    "step_norm_sha256": "5ddb9523b4e6b1ae90aae8166d0922659e44d56211121259ace78212b7fffa91",
+    "bytes": 5767
+   },
+   "volume_mm3": 1654.05
+  },
+  "cycloid_disc_a": {
+   "stl": {
+    "sha256": "9d2fece4bc44f54df722525c8a1394ea0a763a7cc0a1d876ddb0f3a4e263592f",
+    "bytes": 321684
+   },
+   "step": {
+    "sha256": "376b3c87e287bbb2e0f7511d29ba8d3c1999c7ace7a0c1dde8e88b44f1375f21",
+    "step_norm_sha256": "21d772d78eba7f287e03b049488cc30aa092db3f27305bc1c6ae19c55070472a",
+    "bytes": 2911012
+   },
+   "volume_mm3": 25141.94
+  },
+  "cycloid_disc_b": {
+   "stl": {
+    "sha256": "293f3904e481e507331df92df7e32b91083c4ab239e79f802ab8eb8994c87dc8",
+    "bytes": 321684
+   },
+   "step": {
+    "sha256": "2d1fe561e809b0790907bf8fbdbfd009477082253f9185c439a7e6086a6922e3",
+    "step_norm_sha256": "8ecde95d8d4bb83a25dad02950e227b932e8cccb15a80585029bd353b2dc4652",
+    "bytes": 2911146
+   },
+   "volume_mm3": 25141.94
+  },
+  "eccentric_shaft": {
+   "stl": {
+    "sha256": "5fee3a9c2db30f9e4d774aa7ae8f7fa8b19302a3d2a806a56bf2385be12873e3",
+    "bytes": 125884
+   },
+   "step": {
+    "sha256": "7e6521e605ea5a088fd0a9dd726d77de3b945c90554ca50367348663a88cc24e",
+    "step_norm_sha256": "b15d8a5e8da7dba9a0349f192a4a14fc43f917fc1e79ce10187b65c6363cf51b",
+    "bytes": 23800
+   },
+   "volume_mm3": 12456.41
+  },
+  "output_carrier": {
+   "stl": {
+    "sha256": "285899e80ab593479f8ef1959993ab0ff25493a09067d634b0ca9d0fb670e564",
+    "bytes": 226684
+   },
+   "step": {
+    "sha256": "193649a148e29c64b6d4546d9f7050e7d10cfe3356673738be8f1ce2f4f1657f",
+    "step_norm_sha256": "ba7cafe1c211f30b7cdc941960d36060554d51b69c8804e28756ace2ba639806",
+    "bytes": 42590
+   },
+   "volume_mm3": 33849.09
+  }
+ },
+ "generatedAt": "2026-10-21T10:27:08.313Z"
+}

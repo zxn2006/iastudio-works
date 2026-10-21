@@ -1,0 +1,79 @@
+{
+ "schema": "iastudio-cad-viewer/2",
+ "assembly": "cycloid",
+ "title": "摆线针轮减速器",
+ "params": {
+  "R": 40,
+  "rr": 4.5,
+  "ecc": 2.4,
+  "lobes": 9,
+  "width": 10
+ },
+ "parts": [
+  "针齿壳",
+  "针齿销",
+  "摆线轮 A",
+  "摆线轮 B",
+  "偏心轴",
+  "输出盘"
+ ],
+ "builtAt": "2026-10-21T10:27:13.530Z",
+ "assets": {
+  "index.html": {
+   "sha256": "375fdcf0a5d35c5d8bf03bb30beb7e01f7196139eb5afbce736e94c89fe9952e",
+   "bytes": 16644
+  },
+  "assembly.json": {
+   "sha256": "ca70e975ff1fc61cf5fd590f7e509391b859060a3399c5a5f7fbe7f69127a034",
+   "bytes": 5909
+  },
+  "housing.stl": {
+   "sha256": "99a3a85b1ecd39fd9e077db0f39cb47c61157e41a658c799af14b86929e49e2d",
+   "bytes": 202884
+  },
+  "pin.stl": {
+   "sha256": "d8cdcb46e351ec2efe9ab9491a066c3a1149f66ca7ee1d00dc7b691e6dc2341f",
+   "bytes": 25084
+  },
+  "cycloid_disc_a.stl": {
+   "sha256": "9d2fece4bc44f54df722525c8a1394ea0a763a7cc0a1d876ddb0f3a4e263592f",
+   "bytes": 321684
+  },
+  "cycloid_disc_b.stl": {
+   "sha256": "293f3904e481e507331df92df7e32b91083c4ab239e79f802ab8eb8994c87dc8",
+   "bytes": 321684
+  },
+  "eccentric_shaft.stl": {
+   "sha256": "5fee3a9c2db30f9e4d774aa7ae8f7fa8b19302a3d2a806a56bf2385be12873e3",
+   "bytes": 125884
+  },
+  "output_carrier.stl": {
+   "sha256": "285899e80ab593479f8ef1959993ab0ff25493a09067d634b0ca9d0fb670e564",
+   "bytes": 226684
+  },
+  "housing.step": {
+   "sha256": "73c9e5d299701d20de43482165caa2e45aa39796bce72dc256f1b397a08c3eee",
+   "bytes": 39217
+  },
+  "pin.step": {
+   "sha256": "43b31fc568f2d067faf1bbe3d397e800d0c3087a2f24d9795c02a9f84607786f",
+   "bytes": 5767
+  },
+  "cycloid_disc_a.step": {
+   "sha256": "376b3c87e287bbb2e0f7511d29ba8d3c1999c7ace7a0c1dde8e88b44f1375f21",
+   "bytes": 2911012
+  },
+  "cycloid_disc_b.step": {
+   "sha256": "2d1fe561e809b0790907bf8fbdbfd009477082253f9185c439a7e6086a6922e3",
+   "bytes": 2911146
+  },
+  "eccentric_shaft.step": {
+   "sha256": "7e6521e605ea5a088fd0a9dd726d77de3b945c90554ca50367348663a88cc24e",
+   "bytes": 23800
+  },
+  "output_carrier.step": {
+   "sha256": "193649a148e29c64b6d4546d9f7050e7d10cfe3356673738be8f1ce2f4f1657f",
+   "bytes": 42590
+  }
+ }
+}
